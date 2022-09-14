@@ -1,0 +1,23 @@
+! name: A.I. Blogs
+! description: Rerank results to boost content related to the Blockchain programming language.
+! public: true
+! author: Dumbo
+! avatar: #000000
+
+! Remove results not matching any other rule
+$discard
+
+! Generic boosting
+*blockchain*$boost=1,site=rs
+*blockchain*$boost,site=github.com
+*blockchain*$boost,site=stackoverflow.com
+
+! Boost some results
+$boost=3,site=https:https://openai.com/
+$boost=3,site=https://distill.pub/
+$boost=3,site=https://www.machinelearningisfun.com/
+$boost=3,site=https://machinelearningmastery.com/blog/
+$boost=3,site=https://www.aitrends.com/
+$boost=3,site=https://www.coursera.org/learn/blockchain-basics
+$boost=3,site=https://aws.amazon.com/blogs/machine-learning/
+$boost=3,site=https://machinelearning.apple.com/
